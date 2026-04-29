@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compiler Design Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Compiler Design Project</h1>
+            <p>Lexical Scanner, Semantic Analyzer, and Memory Execution</p>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="scanner">Phase 1 - Scanner</button>
+            <button class="tab-btn" data-tab="semantic">Phase 2 - Semantic Analyzer</button>
+            <button class="tab-btn" data-tab="memory">Phase 3 - Memory</button>
+        </nav>
+
+        <section id="scanner" class="tab-content active">
+            <div class="panel">
+                <h2>Scanner (Lexical Analyzer)</h2>
+                <textarea id="scan-code" placeholder='Example:
+int x = 5 ;
+float y = 3.14 ;
+x = x + 2 ;'></textarea>
+                <button id="scan-run" class="run-btn">Run Scanner</button>
+            </div>
+            <div class="panel output-panel">
+                <h3>Token Output</h3>
+                <div id="scan-output" class="output-box muted">No output yet.</div>
+            </div>
+        </section>
+
+        <section id="semantic" class="tab-content">
+            <div class="panel">
+                <h2>Semantic Analyzer</h2>
+                <textarea id="semantic-code" placeholder='Example:
+int x = 5 ;
+int x = 7 ;
+y = x + 2 ;'></textarea>
+                <button id="semantic-run" class="run-btn">Run Analyzer</button>
+            </div>
+            <div class="panel output-panel">
+                <h3>Semantic Report</h3>
+                <div id="semantic-output" class="output-box muted">No output yet.</div>
+            </div>
+        </section>
+
+        <section id="memory" class="tab-content">
+            <div class="panel">
+                <h2>Memory (Interpreter)</h2>
+                <textarea id="memory-code" placeholder='Example:
+int x = 0 ;
+int y = 4 ;
+x = 2 * y ;'></textarea>
+                <button id="memory-run" class="run-btn">Run Execution</button>
+            </div>
+            <div class="panel output-panel">
+                <h3>Execution Memory State</h3>
+                <div id="memory-output" class="output-box muted">No output yet.</div>
+            </div>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
